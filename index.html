@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Learn Vue.js with fun</title>
+  </head>
+  <body>
+    <label for="input">Greeting message: </label><input type="text" id="input">
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let data = {
+        message: "Hello World!"
+      };
+      document.querySelector("#input").value = data.message;
+    </script>
+  </body>
+</html>
