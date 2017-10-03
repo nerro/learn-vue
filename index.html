@@ -6,9 +6,9 @@
   </head>
   <body>
     <div id="root">
-      <label for="input">Greeting message: </label>
-      <input type="text" id="input" v-model="message">
-      <p>The value of the input is: {{ message }}</p>
+      <ul>
+        <li v-for="name in names">{{ name }}</li>
+      </ul>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
@@ -16,7 +16,7 @@
       new Vue({
         el: '#root',
         data: {
-          message: "Hello World!"
+          names: ["Joe", "Jane", "Mary", "Jack"]
         }
       })
     </script>
