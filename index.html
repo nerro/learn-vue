@@ -19,13 +19,15 @@
         el: '#root',
         data: {
           names: ["Joe", "Jane", "Mary", "Jack"]
-        }
-      });
+        },
 
-      document.querySelector("#button").addEventListener("click", () => {
-        let name = document.querySelector("#input");
-        app.names.push(name.value);
-        name.value = "";
+        mounted() {
+          document.querySelector("#button").addEventListener("click", () => {
+            let name = document.querySelector("#input");
+            app.names.push(name.value);
+            name.value = "";
+          });
+        }
       });
     </script>
   </body>
