@@ -2,18 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Learn Vue2 step by step :: basic data binding</title>
+    <title>Learn Vue 2 :: Basic Data Binding</title>
   </head>
   <body>
-    <input type="text" id="input" title="input">
+    <div id="root">
+      <input type="text" id="input" title="input" v-model="message">
+      <p>The value of the input is: {{ message }}</p>
+    </div>
 
     <script src="https://unpkg.com/vue"></script>
     <script>
-      let data = {
-        message: "Hello World"
-      };
-
-      document.querySelector("#input").value = data.message;
+      new Vue({
+        el: "#root",
+        data: {
+          message: "Hello World"
+        }
+      })
     </script>
   </body>
 </html>
