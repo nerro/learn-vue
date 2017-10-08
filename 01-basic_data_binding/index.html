@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Learn Vue2 step by step :: basic data binding</title>
+  </head>
+  <body>
+    <input type="text" id="input" title="input">
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let data = {
+        message: "Hello World"
+      };
+
+      document.querySelector("#input").value = data.message;
+    </script>
+  </body>
+</html>
