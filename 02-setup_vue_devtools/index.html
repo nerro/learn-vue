@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Learn Vue 2 :: Setup Vue DevTools</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>Different data models:</p>
+      <ul>
+        <li><span :title="firstTitle">{{ first }}</span></li>
+        <li>{{ second }}</li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          first: 'data for first item',
+          firstTitle: 'generated at ' + new Date().toUTCString(),
+          second: 'data for second item'
+        }
+      });
+    </script>
+  </body>
+</html>
