@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Learn Vue 2 :: Lists</title>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li v-for="name in names" v-text="name"></li>
+      </ul>
+
+      <input id="input" type="text" title="Enter a name">
+      <button id="button">Add Name</button>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      new Vue({
+        el: '#root',
+        data: {
+          names: ['Joe', 'Mary', 'Jane', 'Jack']
+        },
+
+        mounted() {
+          document.querySelector('#button').addEventListener('click', () => {
+            let name = document.querySelector('#input');
+            this.names.push(name.value);
+            name.value = '';
+          })
+        }
+      });
+    </script>
+  </body>
+</html>
