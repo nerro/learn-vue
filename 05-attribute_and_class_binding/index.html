@@ -3,10 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <title>Learn Vue 2 :: Attribute and Class Binding</title>
+    <style>
+      .is-loading {
+        background: red;
+      }
+    </style>
   </head>
   <body>
     <div id="root">
-      <button v-bind:title="title">Hover Over Me</button>
+      <button :title="title">Hover Over Me</button>
+      <br>
+      <button :class="{'is-loading': isLoading}" @click="toggleClass">Click Me</button>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
@@ -14,7 +21,13 @@
       new Vue({
         el: '#root',
         data: {
-          title: 'Now the title is being set through JavaScript.'
+          title: 'Now the title is being set through JavaScript.',
+          isLoading: false
+        },
+        methods: {
+          toggleClass() {
+            this.isLoading = true;
+          }
         }
       });
     </script>
