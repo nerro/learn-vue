@@ -13,7 +13,12 @@
     <div id="root">
       <button :title="title">Hover Over Me</button>
       <br>
+      <br>
       <button :class="{'is-loading': isLoading}" @click="toggleClass">Click Me</button>
+      <br>
+      <br>
+      <p>Exercise:</p>
+      <button :disabled="isDisabled" @click="disableButton">Disable Me</button>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
@@ -22,11 +27,15 @@
         el: '#root',
         data: {
           title: 'Now the title is being set through JavaScript.',
-          isLoading: false
+          isLoading: false,
+          isDisabled: false
         },
         methods: {
           toggleClass() {
             this.isLoading = true;
+          },
+          disableButton() {
+            this.isDisabled = true;
           }
         }
       });
